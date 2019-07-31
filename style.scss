@@ -1,0 +1,163 @@
+@import "variables";
+
+body {
+	background-color: $color-background;
+	color: $color-foreground;
+	font-family: $font-stack;
+	font-size: $font-size;
+	line-height: $font-line-height;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+	font-weight: 400;
+	line-height: $font-line-height;
+}
+h1 { 
+	font-size: 2.5em;
+}
+h2 { 
+	font-size: 1.75em;
+	color: $color-dark;
+}
+h3 { 
+	font-size: 1.5em;
+	color: $color-dark;
+}
+h4 {
+	font-size: 1.25em;
+	color: $color-dark;	
+}
+h5 { 
+	font-size: 1em;
+}
+h6 {
+	font-size: .75em;
+	font-weight: 600;
+}
+
+// Text Options
+strong { font-weight: 600 }
+em { font-style: italic }
+.underline {
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+	line-height: 1;
+	text-shadow:
+    2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
+}
+h1.text-center,
+h2.text-center,
+h3.text-center,
+h4.text-center,
+h5.text-center,
+h6.text-center,
+p.text-center,
+span.text-center,
+blockquote.text-center,
+figcaption.text-center {
+	text-align: center;
+}
+
+// Links
+a {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+	@extend .underline;
+
+	&:focus, &:hover {
+		color: $color-primary-light;
+	}
+}
+
+// Buttons
+button {
+	width: 150px;
+	height: 50px;
+
+	border-radius: 15px;
+	border: 2px solid $color-primary-light;
+
+	color: $color-primary-light;
+
+	&:hover, &:focus {
+		color: $color-off-white;
+		border-color: $color-primary-light;
+		background-color: $color-primary-light;
+	}
+}
+button.delete {
+	@extend button;
+	border-color: $color-danger;
+	color: $color-danger;
+
+	&:hover, &:focus {
+		color: $color-off-white;
+		border-color: $color-danger;
+		background-color: $color-danger;
+	}
+}
+button.submit {
+	@extend button;
+	border-color: darken($color-success, 40%);
+	color: darken($color-success, 40%);
+
+	&:hover, &:focus {
+		color: $color-off-white;
+		border-color: darken($color-success, 40%);
+		background-color: darken($color-success, 40%);
+	}
+}
+
+// Navbar
+.framework-navbar {
+	@include flexbox();
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+	@include align-items(center);
+	
+	height: 6%;
+	width: 100%;
+
+	background-color: $color-primary;
+
+	color: $color-off-white;
+	font-size: 1.25em;
+	font-weight: 400;
+
+	ul {
+		@include flexbox();
+		@include flex-flow(row nowrap);
+		@include justify-content(space-between);
+		@include align-items(baseline);
+
+		.framework-navbar-title {
+			margin-top: -10px;
+			font-size: 1.35em;
+			font-weight: 400;
+		}
+	
+		a {
+			color: inherit;
+			line-height: .7em;
+			font-weight: 400;
+			
+			text-decoration: none;
+			border-bottom: none;
+			text-shadow: none;
+			
+			&:hover, &:focus {
+				border-bottom: 1px solid white;
+			}
+		}
+	}
+
+	* {
+		padding: 10px;
+	}
+}

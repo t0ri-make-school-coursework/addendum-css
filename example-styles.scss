@@ -1,0 +1,144 @@
+@import "variables";
+
+html, body {
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+div.container {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+  
+  margin-top: 2vh;
+}
+
+section {
+  height: 95vh;
+  width: 100vw;
+
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
+
+nav {
+  position: fixed;
+
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
+
+#section-colors {
+  div {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    > div {
+      width: 25vw;
+      height: 33.5vh;
+
+      div:nth-child(1) {
+        background-color: $color-off-white;
+      }
+
+      &:nth-child(2) {
+        background-color: $color-medium-light;
+      }
+
+      &:nth-child(3) {
+        background-color: $color-medium-dark;
+      }
+
+      &:nth-child(4) {
+        background-color: $color-dark;
+      }
+
+      &:nth-child(5) {
+        background-color: $color-foreground;
+      }
+
+      &:nth-child(6) {
+        background-color: $color-primary;
+      }
+
+      &:nth-child(7) {
+        background-color: $color-primary-light;
+      }
+
+      &:nth-child(8) {
+        background-color: $color-primary-dark;
+      }
+
+      &:nth-child(9) {
+        background-color: $color-info;
+      }
+
+      &:nth-child(10) {
+        background-color: $color-success;
+      }
+
+      &:nth-child(11) {
+        background-color: $color-danger;
+      }
+
+      &:nth-child(12) {
+        background-color: $color-callout;
+      }
+    }
+  }
+}
+
+#section-headings div {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+
+  margin-top: 25vh;
+  
+  * {
+    margin: 2vh;
+  }
+}
+
+#section-paragraph {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+
+  p {
+    width: 50vw;
+    margin: 1vh;
+  }
+}
+
+#section-buttons {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+#section-forms {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+#section-navbar {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+
+  div.framework-navbar {
+    width: 60vw;
+  }
+}

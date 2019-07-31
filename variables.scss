@@ -1,0 +1,87 @@
+// Compiles to `theme.css`
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,600&display=swap');
+
+// Color Variables
+$color-off-white: #feefef;
+$color-background: #fff;
+$color-foreground: #000;
+$color-dark: #333;
+$color-medium-dark: #505050;
+$color-medium-light: #aaa;
+$color-primary: #68466f;
+$color-primary-light: #ff817a;
+$color-primary-dark: #242a6a;
+$color-info: #35b9c4;
+$color-success: #b3ffd2;
+$color-danger: #c5504d;
+$color-callout: #fef181;
+
+
+// Font Variables
+$font-size: 16px;
+$font-line-height: 1.4em;
+$font-stack: "Open Sans", Helvetica, Arial, sans-serif;
+$font-heading: Merriweather;
+$font-stack-code: monospace;
+
+// Mixins
+@mixin gradient($direction, $list) { 
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);  
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// Flexbox mixins: https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+       -ms-flex-align: $align;
+          align-items: $align;
+}
