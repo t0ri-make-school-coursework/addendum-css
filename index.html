@@ -4,23 +4,25 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="example-styles.css">
+		<link rel="stylesheet" href="example-styles.css">
+		<script src="components.js"></script>
   </head>
 <body>
-
 	<nav class="framework-navbar">
 		<ul>
-			<li class="framework-navbar-title"><a href="#">Framework</a></li>
+			<li class="framework-navbar-title"><a href="#section-colors">Addendum</a></li>
 			<li><a href="#section-colors">Colors</a></li>
-			<li><a href="#section-headings">Headings</a></li>
-			<li><a href="#section-paragraph">Paragraphs</a></li>
-			<li><a href="#section-buttons">Buttons</a></li>
+			<li><a href="#section-text">Text</a></li>
+			<li><a href="#section-alerts">Alerts</a></li>
 			<li><a href="#section-forms">Forms</a></li>
 			<li><a href="#section-navbar">Navbar</a></li>
+			<li><a href="#section-table">Tables</a></li>
+			<li><a href="#section-card">Cards</a></li>
+			<li><a href="#section-component">Copyright</a></li>
 			<li><a href="#section-footer">Footer</a></li>
 		</ul>
 		<ul>
-			<li><a href="https://github.com/">Github</a></li>
+			<li><a href="https://github.com/t0ri/addendum-css">Github</a></li>
 			<li><a href="#">Demo</a></li>
 		</ul>
 	</nav>
@@ -43,7 +45,9 @@
 			</div>
 		</section>
 		
-		<section id="section-headings">
+		<section id="section-text">
+				<p>This is an <strong>average</strong> paragraph. It includes some <em>inline</em> elements such as &lt;strong&gt; and &lt;em&gt;, and <a href="#">a link</a>.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			<div>
 				<h1>H1 Heading</h1>
 				<h2>H2 Heading</h2>
@@ -53,66 +57,66 @@
 				<h6>H6 Heading</h6>
 			</div>
 		</section>
-		
-		<section id="section-paragraph">
-			<p>This is an <strong>average</strong> paragraph. It includes some <em>inline</em> elements such as &lt;strong&gt; and &lt;em&gt;, and <a href="#">a link</a>.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<section id="section-alerts">
+			<h2>Alerts</h2>
+			<div id="alerts">
+				<div class="framework-alert">Alert!  This is an alert.  You have been alerted.</div>
+				<div class="framework-alert danger">Alert!  This is an alert.  You have been alerted.</div>
+				<div class="framework-alert success">Alert!  This is an alert.  You have been alerted.</div>
+				<div class="framework-alert info">Alert!  This is an alert.  You have been alerted.</div>
+			</div>
+			<h2>Badges</h2>
+			<div id="badges">
+				<div class="framework-badge">1</div>
+				<div class="framework-badge new">2 new</div>
+				<div class="framework-badge circle">5</div>
+				<div class="framework-badge new circle">3</div>
+			</div>
 		</section>
-		
-		<section id="section-buttons">
-			<h2>Buttons</h2>
-			<button>Button</button>
 
-			<button class="delete">Delete</button>
-
-			<button class="submit">Submit</button>
-		</section>
-
-		<!-- <section id="section-forms">
-			<h2>Forms and controls</h2>
+		<section id="section-forms">
+			<h2>Forms and Controls</h2>
 			<form>
 				<label>
-					<span>Text:</span>
 					<input type="text" placeholder="What is your name?">
+					<span>Text</span>
 				</label>
 
 				<label>
-					<span>Email:</span>
-					<input type="email" placeholder="What is your name?">
+						<textarea placeholder="Comment"></textarea>
+						<span>By default, textarea won't be resizable</span>
 				</label>
 
 				<label>
-					<span>Password:</span>
-					<input type="password" placeholder="What is your name?">
+					<textarea placeholder="Your comment" class="resize"></textarea>
+					<span>`class="resize"` will allow resizing</span>
 				</label>
 
 				<label>
-					<span>Your comments</span>
-					<textarea placeholder="Your comment"></textarea>
+					<input type="checkbox">
+					<span>Checkbox</span>
 				</label>
 
-				<div>
-					<label id="switch-2" class="switch-2">
-						<input type="checkbox">
-						<div>
-							<div></div>
-						</div>
-					</label>
-					<span>Click Switch no JS</span>
-				</div>
-
-				<label class="control-checkbox">One
-					<input type="checkbox" checked="checked">
-					<span></span>
+				<label>
+					<input type="radio" checked="checked">
+					<span>Radio Button</span>
 				</label>
 			</form>
-		</section> -->
+
+			<div id="buttons">
+				<h2>Buttons</h2>
+				<button>Button</button>
+				<button class="delete">Delete</button>
+				<button class="submit">Submit</button>
+			</div>
+		</section>
 
 		<section id="section-navbar">
 			<h1>Navbar</h1>
 			<div class="framework-navbar">
 				<ul>
-					<li class="framework-navbar-title">Title</li>
+					<li class="framework-navbar-title"><a href="#">Title</a></li>
 					<li><a href="#">Link 1</a></li>
 					<li><a href="#">Link 2</a></li>
 				</ul>
@@ -123,6 +127,106 @@
 			</nav>
 		</section>
 
-  </div>
+		<section id="section-table">
+			<h1>Tables</h1>
+			<div id="table-container">
+				<table>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th> 
+						<th>Age</th>
+					</tr>
+					<tr>
+						<td>Jill</td>
+						<td>Smith</td> 
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>Eve</td>
+						<td>Jackson</td> 
+						<td>94</td>
+					</tr>
+					<tr>
+						<td>Dog</td>
+						<td>Cat</td> 
+						<td>63</td>
+						</tr>
+				</table>
+			</div>
+		</section>
+
+		<section id="section-card">
+			<h1>Cards</h1>
+			<div id="cards-container">
+				<div class="framework-card">
+					<header>
+						<h4>Card Title</h4>
+						<h5>Card Subtitle</h5>
+						<p>Card description. Card description. Card description.</p>
+					</header>
+				</div>
+				<div class="framework-card">
+					<img src="./img/cat.jpg" alt="cookie" />
+					<header>
+							<h4>Card Title</h4>
+							<h5>Card Subtitle</h5>
+					</header>
+					<p>Card description. Card description. Card description.</p>
+				</div>
+				<div class="framework-card">
+					<header>
+						<h4>Card Title</h4>
+						<h5>Card Subtitle</h5>
+						<p>This is my card description.</p>
+					</header>
+					<span class="links">
+						<p><a href="">Link 1</a></p>
+						<p><a href="">Link 2</a></p>
+					</span>
+				</div>
+			</div>
+		</section>
+
+		<section id="section-component">
+			<h1>Copyright Component</h1>
+			<copyright-component></copyright-component>
+			<copyright-component title="Tori" year="1998"></copyright-component>
+		</section>
+	</div>
+	
+
+	<footer class="framework-footer text-center" id="section-footer">
+		<ul class="framework-footer-row">
+				<li><a href="#section-colors">Colors</a></li>
+				<li><a href="#section-text">Text</a></li>
+				<li><a href="#section-alerts">Alerts</a></li>
+				<li><a href="#section-forms">Forms</a></li>
+				<li><a href="#section-navbar">Navbar</a></li>
+				<li><a href="#section-table">Tables</a></li>
+				<li><a href="#section-card">Cards</a></li>
+				<li><a href="#section-component">Copyright</a></li>
+				<li><a href="#section-footer">Footer</a></li>
+		</ul>
+		<div class="framework-footer-column">
+			<ul>
+				<h3>Some Links</h4>
+				<li><a href="#">Careers</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Assorted</a></li>
+				<li><a href="#">Links</a></li>
+				<li><a href="#">& Stuff</a></li>
+			</ul>
+			<ul>
+				<h3>🌟 by /t0ri 2019 💫</h4>
+				<li><a href="#">Github</a></li>
+				<li><a href="#">LinkedIn</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">All</a></li>
+				<li><a href="#">My</a></li>
+				<li><a href="#">Links</a></li>
+			</ul>
+		</div>
+	</footer>
 </body>
 </html>

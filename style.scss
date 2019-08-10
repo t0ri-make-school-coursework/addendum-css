@@ -8,6 +8,7 @@ body {
 	line-height: $font-line-height;
 }
 
+
 // Headings
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-heading;
@@ -37,43 +38,35 @@ h6 {
 	font-weight: 600;
 }
 
+
 // Text Options
-strong { font-weight: 600 }
-em { font-style: italic }
-.underline {
-  border-bottom: 2px solid currentColor;
-  display: inline-block;
-	line-height: 1;
-	text-shadow:
-    2px 2px white,
-    2px -2px white,
-    -2px 2px white,
-    -2px -2px white;
-}
-h1.text-center,
-h2.text-center,
-h3.text-center,
-h4.text-center,
-h5.text-center,
-h6.text-center,
-p.text-center,
-span.text-center,
-blockquote.text-center,
-figcaption.text-center {
-	text-align: center;
-}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+blockquote,
+figcaption {
+	strong { font-weight: 600 }
+	em { font-style: italic }
+	.text-center { text-align: center }
 
-// Links
-a {
-	color: inherit;
-	font-weight: 600;
-	text-decoration: none;
-	@extend .underline;
+	// Links
+	a {
+		color: inherit;
+		font-weight: 600;
+		text-decoration: none;
+		@extend .underline;
 
-	&:focus, &:hover {
-		color: $color-primary-light;
+		&:focus, &:hover {
+			color: $color-primary-light;
+		}
 	}
 }
+
 
 // Buttons
 button {
@@ -90,29 +83,32 @@ button {
 		border-color: $color-primary-light;
 		background-color: $color-primary-light;
 	}
-}
-button.delete {
-	@extend button;
-	border-color: $color-danger;
-	color: $color-danger;
 
-	&:hover, &:focus {
-		color: $color-off-white;
+	&.delete {
+		@extend button;
 		border-color: $color-danger;
-		background-color: $color-danger;
+		color: $color-danger;
+	
+		&:hover, &:focus {
+			color: $color-off-white;
+			border-color: $color-danger;
+			background-color: $color-danger;
+		}
 	}
-}
-button.submit {
-	@extend button;
-	border-color: darken($color-success, 40%);
-	color: darken($color-success, 40%);
 
-	&:hover, &:focus {
-		color: $color-off-white;
+	&.submit {
+		@extend button;
 		border-color: darken($color-success, 40%);
-		background-color: darken($color-success, 40%);
+		color: darken($color-success, 40%);
+	
+		&:hover, &:focus {
+			color: $color-off-white;
+			border-color: darken($color-success, 40%);
+			background-color: darken($color-success, 40%);
+		}
 	}
 }
+
 
 // Navbar
 .framework-navbar {
@@ -137,27 +133,270 @@ button.submit {
 		@include align-items(baseline);
 
 		.framework-navbar-title {
-			margin-top: -10px;
-			font-size: 1.35em;
-			font-weight: 400;
+			margin-top: -15px;
+			line-height: 1em;
+			font-size: 1.25em;
 		}
 	
 		a {
 			color: inherit;
-			line-height: .7em;
-			font-weight: 400;
-			
 			text-decoration: none;
-			border-bottom: none;
-			text-shadow: none;
+			
 			
 			&:hover, &:focus {
-				border-bottom: 1px solid white;
+				border-bottom: 1px solid currentColor;
 			}
 		}
 	}
 
 	* {
 		padding: 10px;
+	}
+}
+
+// Footer
+footer.framework-footer {
+	width: 100vw;
+	height: 45vh;
+
+	text-align: center;
+	font-weight: 400;
+	color: $color-off-white;
+
+	background-color: $color-primary-dark;
+	
+	ul.framework-footer-row {
+		width: 40vw;
+		
+		padding-top: 5vh;
+		margin: auto;
+
+		font-weight: 600;
+
+		@include flexbox();
+		@include flex-flow(row nowrap);
+		@include justify-content(space-around);
+		@include align-items(center);
+		
+		li:not(:last-child)::after {
+			content: "◻️";
+			margin-left: 1vw;
+			display: inline-block;
+		}
+	}
+
+	div.framework-footer-column {
+		width: 40vw;
+		margin: auto;
+
+		@include flexbox();
+		@include flex-flow(row nowrap);
+		@include justify-content(space-around);
+		@include align-items(center);
+
+		ul {
+			margin: 20px 0 20px 0;
+		}
+	}
+
+	a {
+		color: inherit;
+		font-size: 1.25em;
+		text-decoration: none;
+		text-shadow: none;
+		padding-bottom: 0px;
+
+		&:hover {
+			border-bottom: 1px solid currentColor;
+		}
+	}
+
+	h3 {
+		color: inherit;
+	}
+
+	* {
+		padding: 5px;
+	}
+}
+
+
+// Alerts
+.framework-alert {
+	width: 550px;
+	height: 50px;
+
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(center);
+
+	border-radius: 15px;
+	color: darken($color-callout, 40%);
+	border: 1px solid $color-callout;
+	background-color: lighten($color-callout, 20%);
+
+	text-align: center;
+
+	&.danger {
+		color: darken($color-danger, 10%);
+		border: 1px solid lighten($color-danger, 20%);
+		background-color: lighten($color-danger, 40%);
+	}
+
+	&.success {
+		color: darken($color-success, 50%);
+		border: 1px solid darken($color-success, 40%);
+		background-color: lighten($color-success, 10%);
+	}
+
+	&.info {
+		color: darken($color-info, 10%);
+		border: 1px solid lighten($color-info, 20%);
+		background-color: lighten($color-info, 40%);
+	}
+}
+
+
+// Badges
+.framework-badge {
+	height: 2em;
+	width: 2em;
+
+	color: $color-medium-dark;
+	font-size: .75em;
+	text-align: center;
+
+	&.new {
+		height: 2em;
+		width: 2em;
+
+		padding: 0px 5px 0px 5px;
+
+		color: $color-background;
+		background-color: $color-info;
+		border-radius: 10px;
+	}
+
+	&.circle {
+		@extend .framework-badge;
+		border: 1px solid $color-info;
+		border-radius: 30px !important;
+	}
+}
+
+
+// Forms, Input, Control
+form label {
+	@include flexbox();
+	@include flex-flow(column wrap);
+	@include align-items(center);
+
+	margin-bottom: 2vh;
+
+	input {
+		width: 20vw;
+
+		text-align: center;
+		font-size: 1.25em;
+
+		padding: 10px;
+
+		border: none;
+		border-bottom: 2px solid $color-primary-light;
+
+		&[type="checkbox"], &[type="radio"] {
+			+ span {
+				text-align: start !important; // FIX :(
+			}
+		}
+
+		+ span {
+			font-size: 1em;
+			color: $color-medium-dark;
+		}
+	}
+
+	textarea {
+		width: 20vw;
+		height: 5vh;
+
+		padding: 10px;
+
+		border: 1px solid $color-medium-light;
+		resize: none;
+
+		&.resize {
+			resize: both;
+		}
+	}
+}
+
+
+// Table
+table {
+	height: 100%;
+	width: 100%;
+
+	text-align: center;
+
+	tr {
+		&:nth-child(odd) {
+			color: $color-medium-dark;
+		}
+
+		th {
+			font-size: 2em;
+			color: $color-primary-dark;
+		}
+
+		td {
+			font-size: 1.5em;
+		}
+	}
+}
+
+
+// Cards
+div.framework-card {
+	overflow: visible;
+	width: 15vw;
+
+	@include flexbox();
+	@include flex-flow(column nowrap);
+	@include justify-content(space-around);
+
+	margin: 2vh 2vw 2vh 2vw;
+	padding: 10px;
+
+	border: 1px solid $color-medium-light;
+	border-radius: 5px;
+
+	h5 {
+		color: $color-medium-dark;
+		font-family: $font-stack;
+		font-size: 1.1em;
+	}
+
+	p {
+		margin-top: 2vh;
+		font-size: .9em;
+	}
+
+	img[alt] {
+		height: 40%;
+		width: auto;
+
+		display: block;
+		margin: auto;
+	}
+
+	span.links {
+		@include flexbox;
+		@include flex-flow(row wrap);
+		@include justify-content(space-around);
+
+		p a {
+			margin: 1vh 1vw 1vh 1vw;
+		}
 	}
 }

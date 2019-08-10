@@ -1,3 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,600&display=swap");
+.underline {
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  line-height: 1;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+}
 
 /*# sourceMappingURL=theme.css.map */

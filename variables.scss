@@ -24,6 +24,17 @@ $font-stack: "Open Sans", Helvetica, Arial, sans-serif;
 $font-heading: Merriweather;
 $font-stack-code: monospace;
 
+.underline {
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  line-height: 1;
+  text-shadow:
+    2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
+}
+
 // Mixins
 @mixin gradient($direction, $list) { 
   background: -webkit-linear-gradient($direction, $list);

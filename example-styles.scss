@@ -16,7 +16,7 @@ div.container {
 }
 
 section {
-  height: 95vh;
+  height: 100vh;
   width: 100vw;
 
   scroll-snap-stop: always;
@@ -26,6 +26,11 @@ section {
 nav {
   position: fixed;
 
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
+
+footer {
   scroll-snap-stop: always;
   scroll-snap-align: start;
 }
@@ -93,24 +98,21 @@ nav {
   }
 }
 
-#section-headings div {
+#section-text {
   @include flexbox();
   @include flex-flow(column nowrap);
   @include justify-content(center);
   @include align-items(center);
-
-  margin-top: 25vh;
   
-  * {
-    margin: 2vh;
+  div {
+    @include flexbox();
+    @include flex-flow(column nowrap);
+    @include justify-content(center);
+    @include align-items(center);
+    * {
+      margin: 2vh;
+    }
   }
-}
-
-#section-paragraph {
-  @include flexbox();
-  @include flex-flow(column nowrap);
-  @include justify-content(center);
-  @include align-items(center);
 
   p {
     width: 50vw;
@@ -125,11 +127,48 @@ nav {
   @include align-items(center);
 }
 
+#section-alerts {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+  
+  #alerts {
+    height: 40vh;
+    @include flexbox();
+    @include flex-flow(column nowrap);
+    @include justify-content(space-around);
+    @include align-items(center);
+  }
+
+  #badges {
+    width: 30vw;
+    margin-top: 2vh;
+    @include flexbox();
+    @include flex-flow(row nowrap);
+    @include justify-content(space-around);
+    @include align-items(center);
+  }
+}
+
 #section-forms {
   @include flexbox();
   @include flex-flow(column nowrap);
   @include justify-content(center);
   @include align-items(center);
+
+  form {
+    height: 50vh;
+    @include flexbox();
+    @include flex-flow(column nowrap);
+    @include justify-content(space-around);
+    @include align-items(center);
+  }
+
+  div#buttons {
+    text-align: center;
+    height: 20vh;
+  }
 }
 
 #section-navbar {
@@ -141,4 +180,40 @@ nav {
   div.framework-navbar {
     width: 60vw;
   }
+}
+
+#section-table {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+
+  #table-container {
+    margin-top: 50px;
+
+    height: 20vh;
+    width: 50vw;
+  }
+}
+
+#section-card {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+
+  #cards-container {
+    height: 30vh;
+
+    @include flexbox();
+    @include flex-flow(row nowrap);
+    @include justify-content(space-around)
+  }
+}
+
+#section-component {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
 }
